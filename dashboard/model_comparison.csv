@@ -1,0 +1,5 @@
+Model,ROC-AUC,Recall,Precision,F1
+Logistic Regression (clinical),0.6453,0.6195,0.6048,0.6121
+Random Forest (clinical),0.9463,0.8778,0.8794,0.8786
+XGBoost (clinical only),0.8715,0.7585,0.8084,0.7826
+XGBoost (multi-source),0.949,0.8425,0.974,0.9035
