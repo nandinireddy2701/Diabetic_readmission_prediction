@@ -1,0 +1,13 @@
+feature,t_statistic,p_value,significance
+time_in_hospital,-14.11,0.0,***
+num_medications,-12.27,0.0,***
+num_lab_procedures,-6.5,0.0,***
+num_procedures,3.9,0.0001,***
+number_diagnoses,-15.82,0.0,***
+number_inpatient,-53.42,0.0,***
+number_emergency,-19.41,0.0,***
+number_outpatient,-6.03,0.0,***
+BPHIGH,-0.15,0.8776,ns
+DEPRESSION,-1.5,0.1328,ns
+OBESITY,0.07,0.9409,ns
+DIABETES,-0.06,0.9504,ns
