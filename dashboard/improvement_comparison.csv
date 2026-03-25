@@ -1,0 +1,4 @@
+Model,ROC-AUC,Recall,Precision,F1
+XGBoost original (SMOTE),0.6332,0.0423,0.3172,0.0746
+XGBoost scale_pos_weight,0.6559,0.3955,0.1931,0.2595
+XGBoost interaction features,0.6616,0.3979,0.199,0.2653
