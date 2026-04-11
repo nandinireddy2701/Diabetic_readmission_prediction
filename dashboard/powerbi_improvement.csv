@@ -1,0 +1,5 @@
+Stage,ROC_AUC,Recall,Strategy
+Original XGBoost,0.6332,0.0423,Baseline SMOTE + XGBoost
+After Hyperparameter Tuning,0.6362,0.0364,GridSearchCV best params
+After scale_pos_weight,0.6559,0.3955,Class weighting (8:1)
+After Interaction Features,0.6616,0.3979,Added 7 interaction features

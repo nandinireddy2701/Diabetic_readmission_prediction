@@ -1,0 +1,16 @@
+Feature,Importance
+prior_utilization,1.076936
+change,0.6416129
+insulin,0.3421115
+number_outpatient,0.3298587
+number_inpatient,0.28658688
+med_complexity_score,0.2504045
+number_emergency,0.23018526
+metformin,0.21003807
+high_prior_inpatient,0.20399965
+discharge_disposition_id,0.19102988
+diabetesMed,0.18770891
+long_stay,0.1715969
+diag_1,0.1416285
+high_diagnosis_burden,0.13566452
+OBESITY,0.13437018
