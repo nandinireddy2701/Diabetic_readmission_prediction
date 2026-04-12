@@ -39,25 +39,16 @@ Note: Large files over 50MB are stored locally and excluded from GitHub via .git
 
 ## Project Structure
 
-Diabetic_readmission_prediction/
-├── notebooks/
-│   ├── 00_setup_test.ipynb
-│   ├── 01_etl_pipeline.ipynb
-│   ├── 02_eda.ipynb
-│   ├── 03_feature_engineering.ipynb
-│   ├── 04_model_training.ipynb
-│   ├── 05_explainability.ipynb
-│   └── 06_model_improvement.ipynb
-├── data/
-│   ├── raw/
-│   └── processed/
-├── models/
-├── dashboard/
-├── explainability/
-├── api/
-├── tests/
-├── .gitignore
-└── requirements.txt
+The project is organized into the following folders:
+
+- notebooks/ — all 7 Jupyter notebooks one per project phase
+- data/raw/ — original downloaded datasets
+- data/processed/ — cleaned and engineered datasets
+- models/ — saved model pkl files and scalers
+- dashboard/ — all charts and Tableau export CSV files
+- explainability/ — SHAP plots (bar, beeswarm, waterfall)
+- api/ — FastAPI inference endpoint
+- tests/ — unit tests
 
 ## How to Run
 
@@ -109,7 +100,7 @@ Step 5 — Run notebooks in order
 
 ### Week 4 — Exploratory Data Analysis and Feature Engineering 
 
-Created 9 visualizations saved to dashboard folder:
+#### Created 9 visualizations saved to dashboard folder:
 - Target distribution showing 88.8 percent vs 11.2 percent class imbalance
 - Age analysis showing older patients aged 65 to 85 have highest readmission rates
 - Clinical features analysis — readmitted patients have more medications and longer hospital stays
@@ -179,7 +170,7 @@ Note on scores: Published academic literature on this exact dataset with proper 
 
 Applied SHAP TreeExplainer to XGBoost multi-source model on 1000 test patients.
 
-Generated 3 SHAP visualizations:
+##### Generated 3 SHAP visualizations:
 - shap_summary_bar.png — top 15 features by overall importance
 - shap_beeswarm.png — direction of impact for each feature across all patients
 - shap_waterfall.png — single high-risk patient breakdown showing exactly why they were flagged
@@ -229,13 +220,13 @@ Hyperparameter tuning using GridSearchCV tested 12 parameter combinations:
 
 ### Week 7 - Tableau Dashboard 
 
-Exported 4 CSV files for Tableau dashboard:
+##### Exported 4 CSV files for Tableau dashboard:
 - powerbi_patient_risks.csv — 15,265 patients with risk scores and tiers
 - powerbi_model_comparison.csv — performance metrics for all 4 models
 - powerbi_shap_importance.csv — top 15 SHAP feature importance scores
 - powerbi_improvement.csv — model improvement journey data
 
-Risk tier distribution (threshold: High >= 0.30, Medium >= 0.15, Low < 0.15):
+##### Risk tier distribution (threshold: High >= 0.30, Medium >= 0.15, Low < 0.15):
 - Low risk: 9,576 patients
 - Medium risk: 4,252 patients
 - High risk: 1,437 patients
