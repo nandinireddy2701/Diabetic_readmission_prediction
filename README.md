@@ -38,6 +38,7 @@ Purpose: Hospital readmission rates and CMS penalty benchmarks
 Note: Large files over 50MB are stored locally and excluded from GitHub via .gitignore
 
 ## Project Structure
+
 Diabetic_readmission_prediction/
 ├── notebooks/
 │   ├── 00_setup_test.ipynb
@@ -119,14 +120,14 @@ Created 9 visualizations saved to dashboard folder:
 - Gender analysis
 - Race analysis
 
-##### Statistical significance testing confirmed using t-tests:
+#### Statistical significance testing confirmed using t-tests:
 - number_inpatient: t = -53.42, p = 0.0000 — strongest predictor
 - number_emergency: t = -19.41, p = 0.0000 — highly significant
 - number_diagnoses: t = -15.82, p = 0.0000 — highly significant
 - time_in_hospital: t = -14.11, p = 0.0000 — significant
 - OBESITY (SDOH): p = 0.94 — not individually significant but contributes in model combination
 
-Feature engineering created 10 new features:
+#### Feature engineering created 10 new features:
 
 ##### Medication features (5 new):
 - total_diabetes_meds — count of active diabetes medications
@@ -152,20 +153,20 @@ Used academically correct approach to prevent data leakage:
 - Applied SMOTE only to training set — validation and test kept real unbalanced distribution
 - Fitted StandardScaler on training data only
 
-Trained and compared 4 machine learning models on validation set:
+#### Trained and compared 4 machine learning models on validation set:
 
-Logistic Regression (clinical only — baseline)
+##### Logistic Regression (clinical only — baseline)
 - ROC-AUC: 0.5996 — just above random guessing
 - This is our floor — every other model must beat this
 
-Random Forest (clinical only)
+##### Random Forest (clinical only)
 - ROC-AUC: 0.6041 — improvement over linear baseline
 - Confirms non-linear models handle this data better
 
-XGBoost clinical only
+##### XGBoost clinical only
 - ROC-AUC: 0.6043 — strong model but missing SDOH and medication data
 
-XGBoost multi-source (all 44 features) — BEST MODEL
+##### XGBoost multi-source (all 44 features) — BEST MODEL
 - ROC-AUC: 0.6332 — best of all four models
 - Recall: 0.0423, Precision: 0.3172, F1: 0.0746
 
@@ -183,7 +184,7 @@ Generated 3 SHAP visualizations:
 - shap_beeswarm.png — direction of impact for each feature across all patients
 - shap_waterfall.png — single high-risk patient breakdown showing exactly why they were flagged
 
-Top 5 most important features from SHAP:
+##### Top 5 most important features from SHAP:
 1. prior_utilization — importance score 1.087 (strongest by far)
 2. change — importance score 0.633
 3. insulin — importance score 0.354
@@ -197,14 +198,14 @@ Hyperparameter tuning using GridSearchCV tested 12 parameter combinations:
 - Best parameters found: max_depth=8, learning_rate=0.1, n_estimators=200
 - ROC-AUC improved from 0.6332 to 0.6362 (+0.0030)
 
-##### Model improvement strategies applied:
+#### Model improvement strategies applied:
 
-Strategy 1 — scale_pos_weight=8 (class weighting):
+##### Strategy 1 — scale_pos_weight=8 (class weighting):
 - Trained on original unbalanced data with XGBoost class weighting
 - ROC-AUC improved to 0.6559 (+0.0227)
 - Recall improved dramatically from 4.2 percent to 39.8 percent — nearly 10x improvement
 
-Strategy 2 — Interaction features (7 new features added):
+##### Strategy 2 — Interaction features (7 new features added):
 - inpatient_x_meds: number_inpatient multiplied by num_medications
 - utilization_x_diagnoses: number_inpatient multiplied by number_diagnoses
 - age_x_diagnoses: age multiplied by number_diagnoses
@@ -213,20 +214,20 @@ Strategy 2 — Interaction features (7 new features added):
 - obesity_x_diabetes: OBESITY multiplied by DIABETES (SDOH interaction)
 - composite_risk: sum of 5 binary risk flags (0 to 5 scale)
 
-Final best model results:
+##### Final best model results:
 - ROC-AUC: 0.6616 — total improvement of +0.0284 over original model
 - Recall: 0.3979
 - Precision: 0.1990
 - F1-Score: 0.2653
 - Features: 51 total (44 original + 7 interaction features)
 
-Complete improvement journey:
+##### Complete improvement journey:
 - Original XGBoost: 0.6332
 - After hyperparameter tuning: 0.6362 (+0.0030)
 - After scale_pos_weight: 0.6559 (+0.0227)
 - After interaction features: 0.6616 (+0.0284 total)
 
-### Week 7 — Tableau Dashboard 
+### Week 7 - Tableau Dashboard 
 
 Exported 4 CSV files for Tableau dashboard:
 - powerbi_patient_risks.csv — 15,265 patients with risk scores and tiers
@@ -249,13 +250,13 @@ Building 6-sheet Tableau dashboard covering patient risk distribution, risk scor
 
 ## Key Results Summary
 
-Best model: XGBoost with interaction features
-Final ROC-AUC: 0.6616
-Thesis proven: Multi-source model outperforms clinical-only baseline by +0.0289
-Top predictor: prior_utilization with SHAP score of 1.087
-SDOH validated: OBESITY appears in top 15 SHAP features despite being individually non-significant
-Recall improvement: 4.2 percent to 39.8 percent using scale_pos_weight class weighting
-Consistent with literature: Published papers report 0.62 to 0.68 with proper methodology
+- Best model: XGBoost with interaction features
+- Final ROC-AUC: 0.6616
+- Thesis proven: Multi-source model outperforms clinical-only baseline by +0.0289
+- Top predictor: prior_utilization with SHAP score of 1.087
+- SDOH validated: OBESITY appears in top 15 SHAP features despite being individually non-significant
+- Recall improvement: 4.2 percent to 39.8 percent using scale_pos_weight class weighting
+- Consistent with literature: Published papers report 0.62 to 0.68 with proper methodology
 
 ## Tech Stack
 
@@ -274,13 +275,9 @@ Deployment: Azure ML (Week 7 — in progress)
 ## References
 
 - Strack, B., et al. (2014). Impact of HbA1c measurement on hospital readmission rates. BioMed Research International.
-
 - Donze, J., et al. (2013). Potentially avoidable 30-day hospital readmissions. JAMA Internal Medicine, 173(8), 632–638.
-
 - Parekh, A. K., and Barton, M. B. (2010). The challenge of multiple comorbidity. JAMA, 303(13), 1303–1304.
-
 - Chawla, N. V., et al. (2002). SMOTE: Synthetic minority over-sampling technique. Journal of Artificial Intelligence Research, 16, 321–357.
-
 - Lundberg, S. M., and Lee, S. I. (2017). A unified approach to interpreting model predictions. NeurIPS.
 
 
