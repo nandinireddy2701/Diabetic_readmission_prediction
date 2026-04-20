@@ -1,0 +1,4 @@
+Model,Dataset,Threshold,AUC,Recall,Precision,F1
+XGBoost (final features),Validation,0.5,0.6395,0.3593,0.1898,0.2484
+LightGBM,Validation,0.5,0.653,0.4423,0.1881,0.264
+LightGBM,Test,0.4,0.6671,0.7254,0.156,0.2567

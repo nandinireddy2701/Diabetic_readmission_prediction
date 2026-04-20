@@ -1,0 +1,6 @@
+Model,ROC_AUC,Recall,Precision,F1,Split,Seed,Threshold
+XGBoost original (Week 5),0.6332,0.0423,0.3172,0.0746,70/15/15,42,0.50
+XGBoost + interactions (Week 6),0.6616,0.3979,0.199,0.2653,70/15/15,42,0.50
+XGBoost + scientific weights,0.6187,0.5251,0.1564,0.241,60/30/10,123,0.4373
+LightGBM (professor),0.6285,0.6093,0.1522,0.2435,60/30/10,123,0.4779
+LightGBM + PCA,0.5831,0.6087,0.1356,0.2218,60/30/10,123,0.5374
