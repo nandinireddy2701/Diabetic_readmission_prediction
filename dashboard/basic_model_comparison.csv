@@ -1,5 +1,5 @@
-Model,ROC_AUC,Recall,Precision,F1,Split,SMOTE
-Logistic Regression,0.5768,0.4695,0.1116,0.1804,60/30/10,30% ratio
-Random Forest,0.5994,0.0361,0.1118,0.0546,60/30/10,30% ratio
-XGBoost (clinical only),0.5846,0.043,0.1833,0.0697,60/30/10,30% ratio
-XGBoost (multi-source),0.6111,0.0096,0.2647,0.0185,60/30/10,30% ratio
+Model,ROC_AUC,Recall,Precision,F1,Features,Threshold
+Logistic Regression,0.5753,0.4785,0.1109,0.18,Clinical,0.3
+Random Forest,0.6004,0.4865,0.1183,0.1903,Clinical,0.3
+XGBoost (clinical only),0.5844,0.1338,0.139,0.1364,Clinical,0.3
+XGBoost (multi-source),0.6103,0.086,0.1919,0.1188,Multi-source,0.3
