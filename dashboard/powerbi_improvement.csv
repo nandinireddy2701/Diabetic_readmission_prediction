@@ -1,5 +1,8 @@
-Stage,ROC_AUC,Recall,Strategy
-Original XGBoost,0.6332,0.0423,Baseline SMOTE + XGBoost
-After Hyperparameter Tuning,0.6362,0.0364,GridSearchCV best params
-After scale_pos_weight,0.6559,0.3955,Class weighting (8:1)
-After Interaction Features,0.6616,0.3979,Added 7 interaction features
+Model,ROC_AUC,Recall,CV_AUC,Type
+LR basic,0.5753,0.4785,N/A,Basic
+Random Forest,0.6004,0.4865,N/A,Basic
+XGBoost clinical only,0.5844,0.1338,N/A,Basic
+XGBoost multi-source,0.6103,0.086,N/A,Basic
+LR + PCA + CV,0.5441,0.5114,0.8201,Advanced
+XGBoost no PCA + CV,0.5953,0.4408,0.8823,Advanced
+LightGBM no PCA + CV,0.6068,0.4594,0.8818,Advanced
