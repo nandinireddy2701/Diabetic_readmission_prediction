@@ -40,7 +40,6 @@ Note: Large files over 50MB are stored locally and excluded from GitHub via .git
 ## Project Structure
 
 The project is organized into the following folders:
-
 - notebooks/ — all 7 Jupyter notebooks one per project phase
 - data/raw/ — original downloaded datasets
 - data/processed/ — cleaned and engineered datasets
@@ -180,18 +179,18 @@ Access at: http://localhost:8501
 
 ## Tech Stack
 
-Language: Python 3.11
-Environment: Conda on Mac
-IDE: VS Code with Jupyter kernel
-ML Models: Logistic Regression, Random Forest, XGBoost, LightGBM
-Class Balancing: SMOTE from imbalanced-learn
-Hyperparameter Tuning: Optuna with TPE Bayesian optimization
-Explainability: SHAP TreeExplainer
-Data Processing: pandas, numpy
-Visualization: matplotlib, seaborn, Plotly
-API: FastAPI with Uvicorn
-Dashboard: Streamlit
-Version Control: Git and GitHub
+- Language: Python 3.11
+- Environment: Conda on Mac
+- IDE: VS Code with Jupyter kernel
+- ML Models: Logistic Regression, Random Forest, XGBoost, LightGBM
+- Class Balancing: SMOTE from imbalanced-learn
+- Hyperparameter Tuning: Optuna with TPE Bayesian optimization
+- Explainability: SHAP TreeExplainer
+- Data Processing: pandas, numpy
+- Visualization: matplotlib, seaborn, Plotly
+- API: FastAPI with Uvicorn
+- Dashboard: Streamlit
+- Version Control: Git and GitHub
 
 ## References
 
